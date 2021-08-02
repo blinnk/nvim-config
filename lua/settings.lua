@@ -190,7 +190,7 @@ au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncS
 
 
 -- set up undofiles in a specific dir and make sure it exists
-local undo_dir = os.getenv("HOME") .. '/.config/nvim/undodir'
+local undo_dir = os.getenv("HOME") .. '/.data/nvim/undodir'
 os.execute("mkdir -p " .. undo_dir)
 vim.o.undodir = undo_dir
 vim.cmd 'set undofile'
