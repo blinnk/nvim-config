@@ -77,6 +77,16 @@ end
 require('formatter').setup({
   logging = false,
   filetype = {
+   -- lua = {
+   --      -- luafmt
+   --      function()
+   --        return {
+   --          exe = "luafmt",
+   --          args = {"--indent-count", 2, "--stdin"},
+   --          stdin = true
+   --        }
+   --      end
+   --  },
     javascript = {
       prettier
     },
@@ -124,7 +134,6 @@ require('formatter').setup({
     }
   }
 })
-
 
 -- vim.api.nvim_command [[augroup Format]]
 -- vim.api.nvim_command [[autocmd! * <buffer>]]

@@ -36,8 +36,10 @@ lsp_config.efm.setup({
   filetypes = {
     'javascript',
     'javascriptreact',
+    'javascript.jsx',
     'typescript',
-    'typescriptreact'
+    'typescriptreact',
+    'typescript.tsx'
   },
   on_attach = on_attach,
   root_dir  = lsp_config.util.root_pattern(unpack(efm_root_markers)),

@@ -1,13 +1,19 @@
-nnoremap <silent> <Space>b :NERDTreeToggle<CR>
-nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+let g:NERDTreeLimitedSyntax = 1
+let g:NERDTreeSyntaxDisableDefaultExtensions = 1
+let g:NERDTreeSyntaxDisableDefaultExactMatches = 1
+let g:NERDTreeSyntaxDisableDefaultPatternMatches = 1
+let g:NERDTreeSyntaxEnabledExtensions = ['c', 'h', 'c++', 'cpp', 'php', 'rb', 'js', 'css', 'html'] " enabled extensions with default colors
+" let g:NERDTreeSyntaxEnabledExactMatches = ['node_modules', 'favicon.ico'] " enabled exact matches with default colors
+let g:NERDTreeHighlightCursorline = 1
 
-   let NERDTreeQuitOnOpen = 1
-   let g:NERDTreeMinimalUI = 1
-  let g:NERDTreeIgnore = ['undodir', 'autoload', 'node_modules' ]
-  let NERDTreeAutoDeleteBuffer = 1
-  let NERDTreeShowHidden=1
-  let NERDTreeShowLineNumbers=1
-  let g:NERDTreeMinimalUI = 1
+nnoremap <silent> <Space>b :NERDTreeToggle<CR>
+
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeIgnore = ['undodir', 'autoload', 'node_modules' ]
+let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeShowLineNumbers=1
+let g:NERDTreeMinimalUI = 1
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif

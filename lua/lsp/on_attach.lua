@@ -6,8 +6,6 @@
 --   buf_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 -- end
 
--- return on_attach
-
 local buf_map = require('utils').buf_map
 local buf_option = require('utils').buf_option
 

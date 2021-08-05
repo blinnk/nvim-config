@@ -1,5 +1,4 @@
 -- module to easier create keybinds
-
 -- global table to hold our functions
 _bindfuncs = {}
 -- current bindfunc index

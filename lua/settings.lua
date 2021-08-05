@@ -55,8 +55,8 @@
 
 local apply_options = require('utils').apply_options
 local apply_globals = require('utils').apply_globals
-local add = require('utils').add
-local concat = require('utils').concat
+-- local add = require('utils').add
+-- local concat = require('utils').concat
 
 apply_globals({
   mapleader = " ", -- map leader to <Space>
@@ -126,12 +126,12 @@ apply_options({
   pumheight = 14,
   signcolumn = 'yes:1',
   list = true,
-  listchars = { 'tab:░░', 'trail:·' },
+  -- listchars = { 'tab:░░', 'trail:·' },
   fillchars = { eob = '~' },
   timeout = true,
   timeoutlen = 1000,
   ttimeoutlen = 50,
-  showtabline = 2,
+  -- showtabline = 2,
   showmode = false,
   path = vim.opt.path + { '**' },
   wildmenu = true,
@@ -175,7 +175,7 @@ apply_options({
   visualbell = true,
   errorbells = false,
   showmatch = true,
-  colorcolumn = '120',
+  colorcolumn = '100',
   synmaxcol = 1024,
   formatoptions = 'njvcrql',
   joinspaces = false,
@@ -196,3 +196,4 @@ vim.o.undodir = undo_dir
 vim.cmd 'set undofile'
 
 vim.cmd ('au BufEnter * set fo-=c fo-=r fo-=o')
+vim.cmd('set shortmess+=c')          --- " Don't pass messages to |ins-completion-menu|
