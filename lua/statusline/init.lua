@@ -4,39 +4,14 @@ local gl = require("galaxyline")
 local gls = gl.section
 -- gl.short_line_list = {"nerdtree", "packager", "Floaterm", "lazygit", 'fugitive', 'plug', 'term', 'startify', 'vista', 'dbui'}
 
-
--- colors:
---   primary:
---     background: '#0E1014'
---     foreground: '#d5ddd7'
---   cursor:
---     text:       '#0E1014'
---     cursor:     '#d5ddd7'
---   normal:
---     black:      '#252525'
---     red:        '#ae8687'
---     green:      '#98A699'
---     yellow:     '#dfae86'
---     blue:       '#6E8888'
---     magenta:    '#af5e5e'
---     cyan:       '#afd7d7'
---     white:      '#d5ddd7'
---   bright:
---     black:      '#252525'
---     red:        '#ae8687'
---     green:      '#80A980'
---     yellow:     '#dfae86'
---     blue:       '#afd7d7'
---     magenta:    '#af5e5e'
---     cyan:       '#dfdfde'
---     white:      '#d5ddd7'
-
 local colors = {
-  bg = "d5ddd7",
-  fg = "#d5ddd7",
-  lbg = "#6E8888",
-  line_bg = "#252525", -- lbg = "NONE", --shows active window
-  -- line_bg = "#6E8888", -- lbg = "NONE", --shows active window
+  -- bg = "#9C9FA1",
+  bg = "#D6C8A3",
+  fg = "#0E1014",
+  -- lbg = "#6E8888",
+  lbg = "#252525",
+  line_bg = "#252525",
+  -- line_bg = "#6E8888",
   magenta = "#af5e5e",
   fg_green = "#527c77",
   blue = "#4B5056",
@@ -80,25 +55,22 @@ end
 local function insert_blank_line_at_left()
 insert_left {
   Space = {
-    provider = function () return '    ' end,
-    highlight = {colors.bg,colors.bg}
+    provider = function () return '   ' end,
+    highlight = {colors.fg,colors.fg}
   }
 }
 end
 
 
--- insert_right insert given item into galaxyline.right
 local function insert_right(element)
   table.insert(gls.right, element)
 end
 
--- insert_blank_line_at_left insert blank line with
--- bg color.
 local function insert_blank_line_at_right()
 insert_right {
   Space = {
-    provider = function () return '    ' end,
-    highlight = {colors.line_bg,colors.bg}
+    provider = function () return '     ' end,
+    highlight = {colors.fg, colors.fg}
   }
 }
 end
@@ -127,19 +99,13 @@ end
 
 insert_blank_line_at_left()
 
---[[ insert_left {
-  Start = {
-    provider = function() return '' end,
-    highlight = {colors.line_bg}
-  }
-} ]]
 
 insert_left {
   ViMode = {
     provider = function()
       -- auto change color according the vim mode
       local mode_color = {
-        n = colors.fg,
+        n = colors.bg,
         i = colors.green,
         v = colors.blue,
         [""] = colors.lbg,
@@ -161,19 +127,42 @@ insert_left {
         t = colors.red
       }
       cmd("hi GalaxyViMode guifg=" .. mode_color[fn.mode()])
-      return "    "
+      -- return "    "
+      return ""
     end,
-    highlight = {colors.fg, colors.bg, }
+    highlight = {colors.bg, colors.fg, "bold" }
   }
 }
 
-insert_left {
-  FileIcon = {
-    provider = "FileIcon",
-    condition = buffer_not_empty,
-    highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bg, "bold"}
+insert_blank_line_at_left()
+
+insert_left{
+    Start = {
+    provider = function() return "   " end,
+    highlight = {colors.fg, colors.bg},
   }
 }
+-- insert_left {
+--   Start = {
+--     provider = function() return '' end,
+--     highlight = {colors.line_bg}
+--   }
+-- }
+
+
+-- insert_left {
+--   Start = {
+--     provider = function() return '' end,
+--     highlight = {colors.line_bg}
+--   }
+-- }
+
+--   FileIcon = {
+--     provider = "FileIcon",
+--     condition = buffer_not_empty,
+--     highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bg, "bold"}
+--   }
+-- }
 
 insert_left{
   FileName = {
@@ -182,7 +171,7 @@ insert_left{
       return fn.expand("%:f")
     end,
     condition = buffer_not_empty,
-    separator = "  ",
+    separator = "  ",
     separator_highlight = {colors.red, colors.bg},
     highlight = {colors.lbg, colors.bg, "bold"}
   }
@@ -203,31 +192,16 @@ insert_left {
 insert_left {
   GitBranch = {
     provider = "GitBranch",
-    separator = "",
+    separator = " ",
     condition = require("galaxyline.provider_vcs").check_git_workspace,
     separator_highlight = {colors.purple, colors.bg},
     highlight = {colors.fg, colors.bg}
   }
 }
 
-insert_blank_line_at_left()
-insert_blank_line_at_left()
 
--- insert_left {
---   Separa = {
---     provider = function() return '  ' end,
---     highlight = {colors.line_bg, },
---   }
--- }
 
 ----------------- RIGHT ----------------------
-
--- insert_right{
---   Start = {
---     provider = function() return '  ' end,
---     highlight = {colors.line_bg, }
---   }
--- }
 
 
 insert_right {
@@ -257,70 +231,42 @@ insert_right {
   }
 }
 
-
--- insert_right {
---   DiagnosticError = {
---     provider = "DiagnosticError",
---     icon = " ",
---     highlight = {colors.red, colors.line_bg},
---   }
--- }
-
--- insert_right {
---   DiagnosticWarn = {
---     provider = "DiagnosticWarn",
---     icon = " ",
---     highlight = {colors.yellow, colors.line_bg},
---   }
--- }
-
--- insert_right {
---   DiagnosticInfo = {
---     provider = "DiagnosticInfo",
---     icon = "  ",
---     highlight = {colors.yellow, colors.line_bg},
---   }
--- }
-
--- insert_right {
---   DiagnosticHint = {
---     provider = "DiagnosticHint",
---     icon = "  ",
---     highlight = {colors.white, colors.line_bg},
---   }
--- }
-
-
---[[ insert_right{
-  Separa = {
-    provider = function() return '' end,
-    highlight = {colors.line_bg, },
-  }
-} ]]
-
 insert_blank_line_at_right()
 
--- gls.short_line_left[2] = {
---   SFileName = {
---     provider = function()
---       local fileinfo = require("galaxyline.provider_fileinfo")
---       local fname = fileinfo.get_current_file_name()
---       for _, v in ipairs(gl.short_line_list) do
---         if v == vim.bo.filetype then
---           return " "
---         end
---       end
---       return fname
---     end,
---     condition = buffer_not_empty,
---     highlight = {colors.fg, colors.lbg, "bold"}
---   }
--- }
+insert_right {
+  ViMode = {
+    provider = function()
+      -- auto change color according the vim mode
+      local mode_color = {
+        n = colors.bg,
+        i = colors.green,
+        v = colors.blue,
+        [""] = colors.lbg,
+        V = colors.blue,
+        c = colors.red,
+        no = colors.red,
+        s = colors.orange,
+        S = colors.orange,
+        [""] = colors.orange,
+        ic = colors.yellow,
+        R = colors.purple,
+        Rv = colors.purple,
+        cv = colors.red,
+        ce = colors.red,
+        r = colors.cyan,
+        rm = colors.cyan,
+        ["r?"] = colors.cyan,
+        ["!"] = colors.red,
+        t = colors.red
+      }
+      cmd("hi GalaxyViMode guifg=" .. mode_color[fn.mode()])
+      -- return "    "
+      return ""
+    end,
+    highlight = {colors.bg, colors.fg, "bold" }
+  }
+}
 
--- gls.short_line_right[1] = {
---   BufferIcon = {
---     provider = "BufferIcon",
---     highlight = {colors.fg, colors.lbg, "bold"}
---   }
--- }
 
+
+insert_blank_line_at_right()

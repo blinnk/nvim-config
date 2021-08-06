@@ -42,12 +42,14 @@ vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>b", "<CMD>NvimTreeToggle<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-n>", "<CMD>NvimTreeToggle<CR>", { noremap = true, silent = true })
 
+-- vim.api.nvim_set_keymap("n", "<Leader>\\", "<CMD>ToggleTerm<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-t>", "<CMD>ToggleTermCloseAll<CR>", { noremap = true, silent = true })
+
 -- LazyGit
 vim.api.nvim_set_keymap("n", "<Leader>gg", "<CMD>:LazyGit<CR>", { noremap = true, silent = true })
 
 -- MD preview
 vim.api.nvim_set_keymap("n", "<Leader>md", "<CMD>:MarkdownPreviewStop<CR>", { noremap = true, silent = true })
-
 vim.api.nvim_set_keymap("n", "<Leader>r", "<CMD>:RnvimrToggle<CR>", { noremap = true, silent = true })
 
 -- Avoid issues because of remapping <c-a> and <c-x> below

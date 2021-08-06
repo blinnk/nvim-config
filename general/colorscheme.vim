@@ -9,7 +9,7 @@ set background=dark
 
 let g:gruvbox_material_transparent_background = 1
 let g:gruvbox_material_palette = 'material'
-colorscheme gruvbox-material
+" colorscheme gruvbox-material
 let g:nord_italic_comments = 1
 let g:nord_italic = 1
 let g:nord_uniform_diff_background = 1
@@ -34,10 +34,13 @@ let g:everforest_transparent_background = 1
 "colorscheme gruvbox8
 "colorscheme pap
 
-let g:buftabline_show = 0
+" let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_transparent_background = 1
+let g:gruvbox_color_column = 'bg2'
+colorscheme gruvbox
 
 hi Comment cterm=italic
-highlight ColorColumn guibg=LightGray ctermbg=2
+" highlight ColorColumn guibg=LightGray ctermbg=2
 highlight DiffChange guibg=NONE ctermbg=NONE
 highlight GitGutterChange guifg=#5f8787 guibg=NONE ctermfg=66 ctermbg=NONE
 highlight GitGutterAdd guifg=#87afaf guibg=NONE gui=NONE ctermfg=109 ctermbg=NONE cterm=NONE

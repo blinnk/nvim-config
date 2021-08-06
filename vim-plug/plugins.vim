@@ -22,7 +22,7 @@ Plug 'fhill2/telescope-ultisnips.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
-" Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/vim-jsx-improve'
@@ -31,7 +31,7 @@ Plug 'neovim/nvim-lsp'
 
 " Utils
 Plug 'akinsho/nvim-toggleterm.lua'
-" Plug 'windwp/nvim-ts-autotag'
+Plug 'windwp/nvim-ts-autotag'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -50,7 +50,7 @@ Plug 'kdheepak/lazygit.nvim'
 " Plug 'rhysd/git-messenger.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-" Plug 'alvan/vim-closetag'
+Plug 'alvan/vim-closetag'
 
 " Snippets
 Plug 'junegunn/vim-emoji'
@@ -84,6 +84,7 @@ Plug 'prettier/vim-prettier', {
 " Plug 'zeekay/vim-beautify'
 
 " General UX/UI
+" Plug 'doums/ponton.nvim'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons'
@@ -119,7 +120,7 @@ Plug 'AlessandroYorba/Despacio'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'
 Plug 'morhetz/gruvbox'
-
+Plug 'yorickpeterse/happy_hacking.vim'
 
 " cause lazy rn
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}

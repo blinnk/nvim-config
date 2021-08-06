@@ -7,7 +7,7 @@ require("toggleterm").setup{
       return vim.o.columns * 0.4
     end
   end,
-  open_mapping = [[<c-\>]],
+  -- open_mapping = [[<C-\>]],
   hide_numbers = true, -- hide the number column in toggleterm buffers
   shade_filetypes = {},
   shade_terminals = true,
@@ -18,5 +18,4 @@ require("toggleterm").setup{
   direction = 'vertical',
   close_on_exit = true, -- close the terminal window when the process exits
   shell = vim.o.shell, -- change the default shell
-  -- This field is only relevant if direction is set to 'float'
 }
