@@ -3,6 +3,20 @@ local apply_globals = require('utils').apply_globals
 local add = require('utils').add
 local concat = require('utils').concat
 
+vim.cmd[[
+  au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
+]]                                               --- " Yank highlight feedback so I know wtf I grabbed
+
+local undo_dir = os.getenv("HOME") .. '/.data/nvim/undodir'
+os.execute("mkdir -p " .. undo_dir)
+vim.o.undodir = undo_dir
+vim.cmd 'set undofile'                           --- " Set up undofiles in a specific dir and make sure it exists
+vim.cmd ('au BufEnter * set fo-=c fo-=r fo-=o')  --- " Don't bring comment to next line
+vim.cmd('set shortmess+=c')                      --- " Don't pass messages to |ins-completion-menu|
+vim.cmd('set iskeyword+=-')                      --- " add '-' as a keyword
+vim.cmd('set complete+=kspell')                  --- " auto complete spell words
+vim.cmd('set matchpairs+=<:>')                   --- " make < and > match
+
 apply_globals({
   mapleader = " ", -- map leader to <Space>
   loaded_gzip = true,
@@ -129,16 +143,6 @@ apply_options({
   foldlevelstart = 99,
 })
 
-vim.cmd[[
-au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })
-]]
 
 
--- set up undofiles in a specific dir and make sure it exists
-local undo_dir = os.getenv("HOME") .. '/.data/nvim/undodir'
-os.execute("mkdir -p " .. undo_dir)
-vim.o.undodir = undo_dir
-vim.cmd 'set undofile'
 
-vim.cmd ('au BufEnter * set fo-=c fo-=r fo-=o')
-vim.cmd('set shortmess+=c')          --- " Don't pass messages to |ins-completion-menu|

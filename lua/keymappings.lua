@@ -1,3 +1,6 @@
+-- Don't exit w/ CTRL-Z
+vim.api.nvim_set_keymap('n', "<C-z>", "<NOP>", {noremap = true, silent = true})
+
 -- Toggle Diagnostic VirtualText
 vim.api.nvim_set_keymap('n', '<leader>tt', ':call v:lua.toggle_diagnostics()<CR>',  {noremap = true, silent = true})
 
@@ -7,9 +10,19 @@ vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { silent = true })
 
+-- Window Resize
+vim.api.nvim_set_keymap("n", "<C-_>", "<CMD>:resize<CR>", { silent = true }) -- Make current window biggest possible
+vim.api.nvim_set_keymap("n", "<C-\\>", "<C-w>=", { silent = true }) -- Reset all to equal size
+
 -- Move selected line / block of text in visual mode
 vim.api.nvim_set_keymap("x", "K", ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("x", "J", ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
+
+-- Atom style bring line down/up with CTRL-D
+vim.api.nvim_set_keymap("n", "<C-D>", "mzyyp`z", {noremap = true,  silent = true})
+
+-- Select all via <C-a>
+vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { silent = true })
 
 -- Keep visual mode indenting
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
@@ -42,11 +55,9 @@ vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>b", "<CMD>NvimTreeToggle<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-n>", "<CMD>NvimTreeToggle<CR>", { noremap = true, silent = true })
 
--- vim.api.nvim_set_keymap("n", "<Leader>\\", "<CMD>ToggleTerm<CR>", { noremap = true })
--- vim.api.nvim_set_keymap("n", "<C-t>", "<CMD>ToggleTermCloseAll<CR>", { noremap = true, silent = true })
-
 -- LazyGit
 vim.api.nvim_set_keymap("n", "<Leader>gg", "<CMD>:LazyGit<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>lg", "<CMD>:LazyGit<CR>", { noremap = true, silent = true })
 
 -- MD preview
 vim.api.nvim_set_keymap("n", "<Leader>md", "<CMD>:MarkdownPreviewStop<CR>", { noremap = true, silent = true })
@@ -72,10 +83,3 @@ vim.cmd [[
 -- -F12- Space to NOP to prevent Leader issues
 vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", { noremap = true, silent = true })
 
--- Save file by CTRL-S
--- vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("i", "<C-s>", "<ESC> :w<CR>", { noremap = true, silent = true })
-
--- Make work uppercase
--- vim.api.nvim_set_keymap("n", "<Leader><C-u>", "viwU<ESC>", { noremap = true })
--- vim.api.nvim_set_keymap("i", "<Leader><C-u>", "<ESC>viwUi", { noremap = true })
