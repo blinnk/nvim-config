@@ -119,7 +119,8 @@ Plug 'AlessandroYorba/Alduin'
 Plug 'AlessandroYorba/Despacio'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug '~/.config/nvim/mygruvbox'
 Plug 'yorickpeterse/happy_hacking.vim'
 
 " cause lazy rn
