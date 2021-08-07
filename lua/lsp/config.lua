@@ -1,3 +1,6 @@
+local lspconfig = require('lspconfig')
+local on_attach = require('lsp.on_attach')
+
 vim.g.diagnostics_active = true
 
 function _G.toggle_diagnostics()

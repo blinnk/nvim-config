@@ -3,7 +3,6 @@ bind = require('binds')
 
 vim.g.startify_session_autoload = 0
 vim.g.startify_session_persistence = true
-vim.g.startify_session_before_save = { 'silent! tabdo NERDTreeClose' }
 
 vim.g.startify_custom_header = {
   '   ╻ ╻   ╻   ┏┳┓',

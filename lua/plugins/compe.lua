@@ -1,4 +1,4 @@
-vim.o.completeopt = "menuone,noselect"
+vim.o.completeopt = "menu,menuone,noselect"
 
 require'compe'.setup ({
     enabled = true,
@@ -24,15 +24,17 @@ require'compe'.setup ({
       tags = false,
       snippets_nvim = true,
       vim_lsp = true,
-      -- ultisnips = true,
+      ultisnips = true,
       emmet_ls = true,
       vim_snippets = true,
       treesitter = true,
+      friendly = true,
       emmet = true,
       emoji = { kind = " ﲃ  (Emoji)", filetypes = { "markdown", "text", "htmldjango" } },
-      -- spell = { kind = "   (Spell)" },
+      spell = { kind = "   (Spell)", filetypes = { "markdown", "text", "JSON"} },
+
+
       -- vim_dadbod_completion = false,
-      -- for emoji press : (idk if that in compe tho)
      -- tabnine = {
      --    priority                 = 50,
      --    max_num_results          = 3,
@@ -43,7 +45,6 @@ require'compe'.setup ({
     },
   }
 )
-
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end

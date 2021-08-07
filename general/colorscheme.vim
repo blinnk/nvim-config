@@ -1,4 +1,4 @@
-set t_Co=256
+" set t_Co=256
 set termguicolors
 "  if has('termguicolors')
 "       set termguicolors
@@ -6,23 +6,24 @@ set termguicolors
 set background=dark
 "colorscheme sierra
 "colorscheme zenburn
+let base16colorspace=256  " Access colors present in 256 colorspace
 
-let g:gruvbox_material_transparent_background = 1
-let g:gruvbox_material_palette = 'material'
+" let g:gruvbox_material_transparent_background = 1
+" let g:gruvbox_material_palette = 'material'
 " colorscheme gruvbox-material
-let g:nord_italic_comments = 1
-let g:nord_italic = 1
-let g:nord_uniform_diff_background = 1
-let g:nord_bold_vertical_split_line = 1
+" let g:nord_italic_comments = 1
+" let g:nord_italic = 1
+" let g:nord_uniform_diff_background = 1
+" let g:nord_bold_vertical_split_line = 1
 "colorscheme nord
 
-let g:mountaineer_transparent_background = 1
+" let g:mountaineer_transparent_background = 1
 " colorscheme mountaineer
 
 " let g:alduin_Shout_Aura_Whisper = 1
 " colorscheme alduin
 
-let g:everforest_transparent_background = 1
+" let g:everforest_transparent_background = 1
 " colorscheme everforest
 
 " colorscheme despacio
@@ -35,9 +36,13 @@ let g:everforest_transparent_background = 1
 "colorscheme pap
 
 " let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_transparent_background = 1
-let g:gruvbox_color_column = 'bg2'
-colorscheme gruvbox
+" let g:gruvbox_transparent_background = 1
+" let g:gruvbox_color_column = 'bg2'
+" colorscheme gruvbox
+
+" colorscheme base16-tomorrow-night
+" colorscheme base16-black-metal-bathory
+colorscheme base16-black-metal-bathory
 
 hi Comment cterm=italic
 " highlight ColorColumn guibg=LightGray ctermbg=2

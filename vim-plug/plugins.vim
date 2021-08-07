@@ -43,7 +43,7 @@ Plug 'matze/vim-move'
 Plug 'tpope/vim-commentary'
 Plug 'abecodes/tabout.nvim'
 "--- tmux
-Plug 'tmux-plugins/vim-tmux-focus-events'
+" Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 "--- git
 Plug 'kdheepak/lazygit.nvim'
@@ -56,6 +56,7 @@ Plug 'alvan/vim-closetag'
 Plug 'junegunn/vim-emoji'
 Plug 'hrsh7th/nvim-compe'
 Plug 'mattn/emmet-vim'
+Plug 'FateXii/emmet-compe'
 Plug 'SirVer/ultisnips'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
@@ -122,7 +123,8 @@ Plug 'sainnhe/gruvbox-material'
 " Plug 'morhetz/gruvbox'
 Plug '~/.config/nvim/mygruvbox'
 Plug 'yorickpeterse/happy_hacking.vim'
-
+Plug 'chriskempson/base16-vim'
+Plug 'arzg/vim-colors-xcode'
 " cause lazy rn
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 

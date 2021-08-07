@@ -8,7 +8,8 @@ local colors = {
   -- bg = "#9C9FA1",
   -- bg = "#D6C8A3",
   bg = "#72655E",
-  fg = "#0E1014",
+  -- fg = "#0E1014",
+  fg = "#FFFFFF",
   -- lbg = "#6E8888",
   lbg = "#252525",
   line_bg = "#252525",
@@ -181,11 +182,11 @@ insert_left{
 insert_left {
   GitIcon = {
     provider = function()
-      return "  "
+      return "   "
       -- return "  "
     end,
     condition = require("galaxyline.provider_vcs").check_git_workspace,
-    highlight = {colors.lbg, colors.bg}
+    highlight = {colors.fg, colors.bg}
   }
 }
 

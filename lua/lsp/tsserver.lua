@@ -13,9 +13,9 @@ lsp_config.tsserver.setup({
                      -- This setting only take effect in insert mode, it does not affect signature help in normal
                      -- mode, 10 by default
 
-      floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
+      floating_window = false, -- show hint in a floating window, set to false for virtual text only mode
       fix_pos = false,  -- set to true, the floating window will not auto-close until finish all parameters
-      hint_enable = false, -- virtual hint enable
+      hint_enable = true, -- virtual hint enable
       -- hint_prefix = "🐼 ",  -- Panda for parameter
       hint_scheme = "String",
       -- use_lspsaga = true,  -- set to true if you want to use lspsaga popup
@@ -73,7 +73,7 @@ lsp_config.tsserver.setup({
 
 
 
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>co", ":TSLspOrganize<CR>",   { silent = true })
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>fix", ":TSLspFixCurrent<CR>",         { silent = true })
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>cR", ":TSLspRenameFile<CR>", { silent = true })
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>ci", ":TSLspImportAll<CR>",  { silent = true })
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>co", ":TSLspOrganize<CR>",   { silent = true })
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>fix", ":TSLspFixCurrent<CR>",         { silent = true })
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>cR", ":TSLspRenameFile<CR>", { silent = true })
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>ci", ":TSLspImportAll<CR>",  { silent = true })
