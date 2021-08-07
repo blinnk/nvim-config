@@ -2,11 +2,12 @@ local cmd = vim.cmd
 local fn = vim.fn
 local gl = require("galaxyline")
 local gls = gl.section
--- gl.short_line_list = {"nerdtree", "packager", "Floaterm", "lazygit", 'fugitive', 'plug', 'term', 'startify', 'vista', 'dbui'}
+gl.short_line_list = {"NvimTree", "vim-plug",'plug', 'term', 'startify'}
 
 local colors = {
   -- bg = "#9C9FA1",
-  bg = "#D6C8A3",
+  -- bg = "#D6C8A3",
+  bg = "#72655E",
   fg = "#0E1014",
   -- lbg = "#6E8888",
   lbg = "#252525",
@@ -171,8 +172,8 @@ insert_left{
       return fn.expand("%:f")
     end,
     condition = buffer_not_empty,
-    separator = "  ",
-    separator_highlight = {colors.red, colors.bg},
+    -- separator = "  ",
+    -- separator_highlight = {colors.red, colors.bg},
     highlight = {colors.lbg, colors.bg, "bold"}
   }
 }
