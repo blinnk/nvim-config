@@ -42,7 +42,7 @@ let base16colorspace=256  " Access colors present in 256 colorspace
 
 " colorscheme base16-tomorrow-night
 " colorscheme base16-black-metal-bathory
-colorscheme base16-black-metal-bathory
+colorscheme base16-black-metal
 
 hi Comment cterm=italic
 " highlight ColorColumn guibg=LightGray ctermbg=2
