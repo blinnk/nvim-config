@@ -20,3 +20,15 @@ autocmd TermEnter term://*toggleterm#*
 " For example: 2<C-t> will open terminal 2
 nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+
+" from http://howivim.com/2016/damian-conway/
+" nmap  S  :%s//g<LEFT><LEFT>
+" " SHIFT-M in vimscript here, since no expr mappings in lua yet?
+" nmap <expr>  M  ':%s/' . @/ . '//g<LEFT><LEFT>'
+
+" UP/DOWN goes through filelist
+nmap <silent> <UP>            :prev<CR>
+nmap <silent> <DOWN>          :next<CR>
+
+
+

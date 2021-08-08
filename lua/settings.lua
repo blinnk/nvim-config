@@ -1,7 +1,7 @@
 local apply_options = require('utils').apply_options
 local apply_globals = require('utils').apply_globals
-local add = require('utils').add
-local concat = require('utils').concat
+-- local add = require('utils').add
+-- local concat = require('utils').concat
 
 vim.cmd[[
   au TextYankPost * silent! lua require("vim.highlight").on_yank({ higroup = 'IncSearch', timeout = 300 })

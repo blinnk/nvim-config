@@ -5,9 +5,10 @@ vim.g.diagnostics_active = true
 
 function _G.toggle_diagnostics()
   if vim.g.diagnostics_active then
-    vim.g.diagnostics_active = false
-    vim.lsp.diagnostic.clear(0)
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
+      vim.g.diagnostics_active = false
+      vim.lsp.diagnostic.clear(0)
+      vim.lsp.handlers["textDocument/publishDiagnostics"] = function()
+  end
   else
     vim.g.diagnostics_active = true
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -20,5 +21,4 @@ function _G.toggle_diagnostics()
     )
   end
 end
-
 

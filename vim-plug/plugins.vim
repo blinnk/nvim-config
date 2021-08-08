@@ -19,15 +19,15 @@ Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'fhill2/telescope-ultisnips.nvim'
 
 " Lsp
+Plug 'neovim/nvim-lsp'
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
-Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+" Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/vim-jsx-improve'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
-Plug 'neovim/nvim-lsp'
 
 " Utils
 Plug 'akinsho/nvim-toggleterm.lua'
@@ -43,11 +43,10 @@ Plug 'matze/vim-move'
 Plug 'tpope/vim-commentary'
 Plug 'abecodes/tabout.nvim'
 "--- tmux
-" Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 "--- git
 Plug 'kdheepak/lazygit.nvim'
-" Plug 'rhysd/git-messenger.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'alvan/vim-closetag'
@@ -56,7 +55,6 @@ Plug 'alvan/vim-closetag'
 Plug 'junegunn/vim-emoji'
 Plug 'hrsh7th/nvim-compe'
 Plug 'mattn/emmet-vim'
-Plug 'FateXii/emmet-compe'
 Plug 'SirVer/ultisnips'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
@@ -74,35 +72,40 @@ Plug 'mlaursen/vim-react-snippets'
 Plug 'nvim-treesitter/nvim-treesitter', {'branch' : '0.5-compat', 'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'branch' : '0.5-compat'}
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " Formatting
 Plug 'mhartington/formatter.nvim'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
-" Plug 'zeekay/vim-beautify'
 
 " General UX/UI
-" Plug 'doums/ponton.nvim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+" tabular plugin is used to format tables
+Plug 'godlygeek/tabular'
+Plug 'elzr/vim-json'
+Plug 'plasticboy/vim-markdown'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'mhinz/vim-startify'
-" Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'master' }
 Plug 'karb94/neoscroll.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ray-x/lsp_signature.nvim'
+" Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'master' }
+" Plug 'doums/ponton.nvim'
 
 " Organization + Notes
 Plug 'itchyny/calendar.vim'
 Plug 'oberblastmeister/neuron.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" Plug 'preservim/nerdtree'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kevinhwang91/rnvimr'
 Plug 'vim-scripts/BufOnly.vim'
@@ -120,13 +123,14 @@ Plug 'AlessandroYorba/Alduin'
 Plug 'AlessandroYorba/Despacio'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/gruvbox-material'
-" Plug 'morhetz/gruvbox'
-Plug '~/.config/nvim/mygruvbox'
+Plug 'morhetz/gruvbox'
 Plug 'yorickpeterse/happy_hacking.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'arzg/vim-colors-xcode'
-" cause lazy rn
-" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+
+" Local
+" Plug '~/.config/nvim/custom-plugins/yankmatches'
+" Plug '~/.config/nvim/custom-plugins/mygruvbox'
 
 call plug#end()
 

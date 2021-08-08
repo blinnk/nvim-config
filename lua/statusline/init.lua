@@ -3,27 +3,32 @@ local fn = vim.fn
 local gl = require("galaxyline")
 local gls = gl.section
 gl.short_line_list = {"NvimTree", "vim-plug",'plug', 'term', 'startify'}
-
-local colors = {
-  -- bg = "#9C9FA1",
-  -- bg = "#D6C8A3",
-  bg = "#72655E",
-  -- fg = "#0E1014",
-  fg = "#FFFFFF",
-  -- lbg = "#6E8888",
-  lbg = "#252525",
-  line_bg = "#252525",
+-- #4A3335
+-- #4D4E50
+-- #334648
   -- line_bg = "#6E8888",
-  magenta = "#af5e5e",
-  fg_green = "#527c77",
+  -- magenta = "#af5e5e",
+--
+-- bg = "#72655E", --gruv
+-- bg = "#9C9FA1",
+-- bg = "#4D4E50",
+local colors = {
+  bg = "#4B5056",
+  fg = "#0E1014",
+  -- fg = "#FFFFFF",
+  -- lbg = "#6E8888",
+  lbg = "#FFFFFF",
+  line_bg = "#252525",
+  magenta = "#C28788",
+  fg_green = "#334648",
   blue = "#4B5056",
-  red= "#af5e5e",
+  red= "#4A3335",
   yellow = "#EBCB8B",
   cyan= "#919652",
   orange= "#E2995C",
   darkblue= "#66899D",
   purple= "#b88",
-  green= "#527C77",
+  green= "#334648",
   gray= "#606360",
   black="#252525"
 }
@@ -57,7 +62,7 @@ end
 local function insert_blank_line_at_left()
 insert_left {
   Space = {
-    provider = function () return '   ' end,
+    provider = function () return ' ' end,
     highlight = {colors.fg,colors.fg}
   }
 }
@@ -71,7 +76,7 @@ end
 local function insert_blank_line_at_right()
 insert_right {
   Space = {
-    provider = function () return '     ' end,
+    provider = function () return '  ' end,
     highlight = {colors.fg, colors.fg}
   }
 }
@@ -100,6 +105,7 @@ end
 -----------------------------------------------------
 
 insert_blank_line_at_left()
+insert_blank_line_at_left()
 
 
 insert_left {
@@ -107,13 +113,13 @@ insert_left {
     provider = function()
       -- auto change color according the vim mode
       local mode_color = {
-        n = colors.bg,
-        i = colors.green,
-        v = colors.blue,
-        [""] = colors.lbg,
-        V = colors.blue,
-        c = colors.red,
-        no = colors.red,
+        n = colors.lbg,
+        i = colors.magenta,
+        v = colors.magenta,
+        [""] = colors.magenta,
+        V = colors.magenta,
+        c = colors.magenta,
+        no = colors.magenta,
         s = colors.orange,
         S = colors.orange,
         [""] = colors.orange,
@@ -132,10 +138,11 @@ insert_left {
       -- return "    "
       return ""
     end,
-    highlight = {colors.bg, colors.fg, "bold" }
+    highlight = {colors.lbg, "bold" }
   }
 }
 
+insert_blank_line_at_left()
 insert_blank_line_at_left()
 
 insert_left{
@@ -175,7 +182,7 @@ insert_left{
     condition = buffer_not_empty,
     -- separator = "  ",
     -- separator_highlight = {colors.red, colors.bg},
-    highlight = {colors.lbg, colors.bg, "bold"}
+    highlight = {colors.lbg, colors.bg}
   }
 }
 
@@ -233,42 +240,42 @@ insert_right {
   }
 }
 
-insert_blank_line_at_right()
+-- insert_blank_line_at_right()
 
-insert_right {
-  ViMode = {
-    provider = function()
-      -- auto change color according the vim mode
-      local mode_color = {
-        n = colors.bg,
-        i = colors.green,
-        v = colors.blue,
-        [""] = colors.lbg,
-        V = colors.blue,
-        c = colors.red,
-        no = colors.red,
-        s = colors.orange,
-        S = colors.orange,
-        [""] = colors.orange,
-        ic = colors.yellow,
-        R = colors.purple,
-        Rv = colors.purple,
-        cv = colors.red,
-        ce = colors.red,
-        r = colors.cyan,
-        rm = colors.cyan,
-        ["r?"] = colors.cyan,
-        ["!"] = colors.red,
-        t = colors.red
-      }
-      cmd("hi GalaxyViMode guifg=" .. mode_color[fn.mode()])
-      -- return "    "
-      return ""
-    end,
-    highlight = {colors.bg, colors.fg, "bold" }
-  }
-}
+-- insert_right {
+--   ViMode = {
+--     provider = function()
+--       -- auto change color according the vim mode
+--       local mode_color = {
+--         n = colors.bg,
+--         i = colors.green,
+--         v = colors.blue,
+--         [""] = colors.lbg,
+--         V = colors.blue,
+--         c = colors.red,
+--         no = colors.red,
+--         s = colors.orange,
+--         S = colors.orange,
+--         [""] = colors.orange,
+--         ic = colors.yellow,
+--         R = colors.purple,
+--         Rv = colors.purple,
+--         cv = colors.red,
+--         ce = colors.red,
+--         r = colors.cyan,
+--         rm = colors.cyan,
+--         ["r?"] = colors.cyan,
+--         ["!"] = colors.red,
+--         t = colors.red
+--       }
+--       cmd("hi GalaxyViMode guifg=" .. mode_color[fn.mode()])
+--       -- return "    "
+--       return ""
+--     end,
+--     highlight = {colors.bg, colors.fg, "bold" }
+--   }
+-- }
 
 
 
-insert_blank_line_at_right()
+-- insert_blank_line_at_right()
