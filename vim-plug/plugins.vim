@@ -59,6 +59,7 @@ Plug 'hrsh7th/nvim-compe'
 " Install nvim-cmp
 Plug 'hrsh7th/nvim-cmp'
 " Install the buffer completion source
+Plug 'L3MON4D3/LuaSnip'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
