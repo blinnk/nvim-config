@@ -55,7 +55,7 @@ Plug 'alvan/vim-closetag'
 
 " Snippets
 Plug 'junegunn/vim-emoji'
-" Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/nvim-compe'
 " Install nvim-cmp
 Plug 'hrsh7th/nvim-cmp'
 " Install the buffer completion source
