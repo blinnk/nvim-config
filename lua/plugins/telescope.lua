@@ -36,7 +36,6 @@ require('telescope').setup {
 
         mappings = {
             i = {
-                ["<C-x>"] = false,
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-k>"] = actions.move_selection_previous,
                 ["<C-q>"] = actions.send_to_qflist,
@@ -50,6 +49,16 @@ require('telescope').setup {
         }
     },
        extensions = {
+        project ={
+           display_type = 'full',
+           base_dirs = {
+        {'~/documents/code/projects', max_depth = 4},
+                '~/documents/code/notes',
+                '~/documents/code/clones',
+                '~/documents/code/templates',
+      },
+          hidden_files = true
+    },
         fzf = {
             override_generic_sorter = false,
             override_file_sorter = true,
@@ -57,10 +66,16 @@ require('telescope').setup {
         }
     }
 }
-
+vim.api.nvim_set_keymap(
+    'n',
+    '<C-p>',
+    ":lua require'telescope'.extensions.project.project{}<CR>",
+    {noremap = true, silent = true}
+)
 require('telescope').load_extension('fzf')
-require('telescope').load_extension('project')
 require('telescope').load_extension('ultisnips')
+require'telescope'.load_extension('project')
+
 
 
 

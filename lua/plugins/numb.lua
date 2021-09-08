@@ -1,2 +1,2 @@
--- require('numb').setup()
-require('numb').disable()
+require('numb').setup()
+-- require('numb').disable()

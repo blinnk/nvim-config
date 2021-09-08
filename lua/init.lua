@@ -19,7 +19,7 @@ require('plugins/neoscroll')
 -- require('plugins/bufferline')
 -- require('plugins/emmet-compe')
 
-require('statusline/init')
+require('statusline/init_1')
 
 require('lsp/config')
 require('lsp/efm')

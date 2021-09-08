@@ -30,5 +30,11 @@ inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 nmap <silent> <UP>            :prev<CR>
 nmap <silent> <DOWN>          :next<CR>
 
+hi LineNr guibg=bg
+set foldcolumn=2
+hi foldcolumn guibg=bg
+hi VertSplit guibg=bg guifg=bg
 
 
+set viminfo='100,n$HOME/.vim/files/info/viminfo
+autocmd User Startified setlocal buflisted

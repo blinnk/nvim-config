@@ -1,3 +1,7 @@
+vim.api.nvim_set_keymap('n', "<F2>", "<CMD>:PlugInstall<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<F3>", "<CMD>`let g:startify_disabled_at_vimenter =1` +checkhealth<CR>", {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', "<Leader>hb", "<CMD>:GitGutterPreviewHunk<CR>", {noremap = true, silent = true})
 -- Startify save/switch sessions
 vim.api.nvim_set_keymap('n', "<Leader>ss", "<CMD>:SSave<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', "<Leader>lp", "<CMD>:SClose<CR>", {noremap = true, silent = true})
@@ -24,8 +28,8 @@ vim.api.nvim_set_keymap("x", "J", ":move '>+1<CR>gv-gv", { noremap = true, silen
 
 -- Atom style bring line down/up with CTRL-D
 -- vim.api.nvim_set_keymap("n", "<C-D>", "mzyyp`z", {silent = true})
-vim.api.nvim_set_keymap("n", "<C-D>", "mzyyp`z", {silent = true})
-vim.api.nvim_set_keymap("x", "<C-D>", "mzyp`jz", {silent = true})
+-- vim.api.nvim_set_keymap("n", "<C-D>", "mzyyp`z", {silent = true})
+-- vim.api.nvim_set_keymap("x", "<C-D>", "mzyp`jz", {silent = true})
 
 -- Select all via <C-a>
 vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { silent = true })
@@ -40,6 +44,7 @@ vim.api.nvim_set_keymap("n", "<Space>lg", "<CMD>Telescope live_grep<CR>", { nore
 vim.api.nvim_set_keymap("n", "<Space>gs", "<CMD>Telescope grep_string<CR><ESC>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Space>km", "<CMD>Telescope keymaps<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Space>snip", "<CMD>Telescope ultisnips<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>b", "<CMD>Telescope buffers<CR>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<Space>fd", "yiw<CMD>Telescope find_files<CR><C-r>+<ESC>", { noremap = true })
 
 -- Buffers
@@ -58,7 +63,6 @@ vim.api.nvim_set_keymap("v", "X", '"_X', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
 
 -- tree toggle
-vim.api.nvim_set_keymap("n", "<Leader>b", "<CMD>NvimTreeToggle<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-n>", "<CMD>NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- LazyGit

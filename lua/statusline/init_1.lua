@@ -7,18 +7,18 @@ gl.short_line_list = {'NvimTree', 'packer', 'dashboard', 'toggleterm'}
 -- Tables
 
 local colors = {
-    lightbg = '#38393f',
-    black = "#2a2e36",
-    red = "#e06c75",
-    green = "#93c379",
-    yellow = "#e5c07b",
-    blue = "#61afef",
-    purple = "#c678dd",
-    cyan = "#56b6c2",
-    white = "#cfcfcf"
+    lightbg = '#191919',
+    black = '#191919',
+    red = "#976868",
+    green = "#8AAC8B",
+    yellow = "#D6C8A3",
+    blue = "#37353E",
+    purple = "#C3C9C2",
+    cyan = "#54909F",
+    white = "#C3C9C2"
 }
 
-local separators = {bLeft = '  ', bRight = '', uLeft = ' ', uTop = ''}
+local separators = {bLeft = '  ', bRight = ' ', uLeft = '  ', uTop = ''}
 
 -- Functions
 local buffer_not_empty = function()
@@ -57,7 +57,7 @@ gls.left[1] = {
     ViMode = {
         provider = function()
             local mode_color = {
-                n = colors.white,
+                n = colors.black,
                 i = colors.green,
                 v = colors.blue,
                 V = colors.blue,
@@ -66,16 +66,18 @@ gls.left[1] = {
                 R = colors.blue
             }
             vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
-            return '   '
+            return '   '
         end,
-        highlight = {colors.white, colors.black, 'bold'}
+        separator = separators.uLeft,
+        separator_highlight = {colors.white, colors.black},
+        highlight = {colors.black, colors.white, 'bold'}
     }
 }
 
 gls.left[2] = {
     NameText = {
         provider = function()
-            return 'VapourNvim '
+            return 'blinK |'
         end,
         highlight = {colors.white, colors.black, 'bold'},
         separator = separators.bRight,
@@ -111,7 +113,7 @@ gls.left[7] = {DiagnosticInfo = {provider = 'DiagnosticInfo', icon = '  ', hi
 gls.right[1] = {
     Octo = {
         provider = function()
-            return '  '
+            return '  '
         end,
         condition = in_git_repo,
         highlight = {colors.red, colors.lightbg},

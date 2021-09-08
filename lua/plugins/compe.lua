@@ -1,4 +1,5 @@
-vim.o.completeopt = "menu,menuone,noselect"
+-- vim.o.completeopt = "menu,menuone,noselect"
+vim.o.completeopt = "longest"
 
 require'compe'.setup ({
     enabled = true,
@@ -21,15 +22,14 @@ require'compe'.setup ({
       vsnip = { kind = "   (Snippet)" },
       nvim_lsp = { kind = "   (LSP)" },
       nvim_lua = true,
-      tags = false,
+      tags = true,
       snippets_nvim = true,
       vim_lsp = true,
       ultisnips = true,
-      emmet_ls = true,
+      -- emmet_ls = true,
       vim_snippets = true,
       treesitter = true,
       friendly = true,
-      emmet = true,
       emoji = { kind = " ﲃ  (Emoji)", filetypes = { "markdown", "text", "htmldjango" } },
       spell = { kind = "   (Spell)", filetypes = { "markdown", "text", "JSON"} },
 

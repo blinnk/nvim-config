@@ -24,12 +24,14 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
 " Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/vim-jsx-improve'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 " Utils
+Plug 'luochen1990/rainbow'
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'ludovicchabant/vim-gutentags'
@@ -43,7 +45,7 @@ Plug 'matze/vim-move'
 Plug 'tpope/vim-commentary'
 Plug 'abecodes/tabout.nvim'
 "--- tmux
-Plug 'tmux-plugins/vim-tmux-focus-events'
+" Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 "--- git
 Plug 'kdheepak/lazygit.nvim'
@@ -53,7 +55,11 @@ Plug 'alvan/vim-closetag'
 
 " Snippets
 Plug 'junegunn/vim-emoji'
-Plug 'hrsh7th/nvim-compe'
+" Plug 'hrsh7th/nvim-compe'
+" Install nvim-cmp
+Plug 'hrsh7th/nvim-cmp'
+" Install the buffer completion source
+Plug 'hrsh7th/cmp-buffer'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'hrsh7th/vim-vsnip'
@@ -127,10 +133,6 @@ Plug 'morhetz/gruvbox'
 Plug 'yorickpeterse/happy_hacking.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'arzg/vim-colors-xcode'
-
-" Local
-" Plug '~/.config/nvim/custom-plugins/yankmatches'
-" Plug '~/.config/nvim/custom-plugins/mygruvbox'
 
 call plug#end()
 
