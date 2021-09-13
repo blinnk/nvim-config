@@ -7,7 +7,7 @@ saga.init_lsp_saga {
     enable        = true,
     sign          = true,
     sign_priority = 20,
-    virtual_text  = true,
+    virtual_text  = false,
   },
   code_action_keys = { quit = {'q', '<ESC>'}, exec = '<CR>' },
   border_style     = "none",

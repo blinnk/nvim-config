@@ -1,5 +1,43 @@
+
+-- goyo on/ff
+vim.api.nvim_set_keymap('n', "<F10>", "<CMD>:Goyo<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<F11>", "<CMD>:Goyo<CR>", {noremap = true, silent = true})
+
+-- plug
 vim.api.nvim_set_keymap('n', "<F2>", "<CMD>:PlugInstall<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', "<F3>", "<CMD>`let g:startify_disabled_at_vimenter =1` +checkhealth<CR>", {noremap = true, silent = true})
+
+-- no yank on paste
+vim.api.nvim_set_keymap('v', "p", '"_dP', {noremap = true, silent = true})
+
+-- resize w/ arrows
+vim.api.nvim_set_keymap('n', "<C-Up>", '<C-w>+ :resize +10<CR>',   {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<C-Down>", '<C-w>- :resize -10<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<C-Right>", '<C-w>+ :vertical:resize +10<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<C-Left>", '<C-w>+ :vertical:resize -10<CR>', {noremap = true, silent = true})
+
+-- Window Resize
+vim.api.nvim_set_keymap("n", "<C-_>", "<CMD>:resize<CR>", { silent = true }) -- Make current window biggest possible
+vim.api.nvim_set_keymap("n", "<C-\\>", "<C-w>=", { silent = true }) -- Reset all to equal size
+
+-- Better window movement
+vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { silent = true })
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { silent = true })
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { silent = true })
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { silent = true })
+
+-- split easier
+vim.api.nvim_set_keymap('n', "<M-v>", '<C-w>v',   {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<M-d>", '<C-w>s',   {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', "<M-Down>", '<C-w>J', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', "<M-Left>", '<C-w>H', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', "<M-Right>", '<C-w>L', {noremap = true, silent = true})
+
+-- move splits around
+vim.api.nvim_set_keymap('n', "<M-Up>", '<C-w>K',   {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<M-Down>", '<C-w>J', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<M-Left>", '<C-w>H', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<M-Right>", '<C-w>L', {noremap = true, silent = true})
+
 
 vim.api.nvim_set_keymap('n', "<Leader>hb", "<CMD>:GitGutterPreviewHunk<CR>", {noremap = true, silent = true})
 -- Startify save/switch sessions
@@ -10,17 +48,7 @@ vim.api.nvim_set_keymap('n', "<Leader>lp", "<CMD>:SClose<CR>", {noremap = true, 
 vim.api.nvim_set_keymap('n', "<C-z>", "<NOP>", {noremap = true, silent = true})
 
 -- Toggle Diagnostic VirtualText
-vim.api.nvim_set_keymap('n', '<leader>tt', ':call v:lua.toggle_diagnostics()<CR>',  {noremap = true, silent = true})
-
--- Better window movement
-vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { silent = true })
-vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { silent = true })
-vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { silent = true })
-vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { silent = true })
-
--- Window Resize
-vim.api.nvim_set_keymap("n", "<C-_>", "<CMD>:resize<CR>", { silent = true }) -- Make current window biggest possible
-vim.api.nvim_set_keymap("n", "<C-\\>", "<C-w>=", { silent = true }) -- Reset all to equal size
+-- vim.api.nvim_set_keymap('n', '<leader>tt', ':call v:lua.toggle_diagnostics()<CR>',  {noremap = true, silent = true})
 
 -- Move selected line / block of text in visual mode
 vim.api.nvim_set_keymap("x", "K", ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
@@ -32,7 +60,7 @@ vim.api.nvim_set_keymap("x", "J", ":move '>+1<CR>gv-gv", { noremap = true, silen
 -- vim.api.nvim_set_keymap("x", "<C-D>", "mzyp`jz", {silent = true})
 
 -- Select all via <C-a>
-vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { silent = true })
+-- vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { silent = true })
 
 -- Keep visual mode indenting
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
@@ -98,8 +126,6 @@ vim.cmd [[
 
 -- -F12- Space to NOP to prevent Leader issues
 vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", { noremap = true, silent = true })
-
-
 vim.api.nvim_set_keymap("n", ";v", "<CMD>:next $MYVIMRC<CR>", { silent = true })
 
 -- reload vimrc in other files when vimrc is saved
@@ -119,9 +145,6 @@ augroup TabCl
 
 
 -- from http://howivim.com/2016/damian-conway/
--- UP/DOWN goes through filelist
-vim.api.nvim_set_keymap("n", "<UP>", "<CMD>:prev<CR>", {silent = true})
-vim.api.nvim_set_keymap("n", "<DOWN>", "<CMD>:next<CR>", {silent = true})
 -- easier search/repl prompt ie X/Y<CR>
 vim.api.nvim_set_keymap("n", "S", ":%s//g<LEFT><LEFT>", {})
 -- if I search and want to replace that pattern after searching...

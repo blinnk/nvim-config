@@ -77,8 +77,6 @@ require('telescope').load_extension('ultisnips')
 require'telescope'.load_extension('project')
 
 
-
-
 -- Implement delta as previewer for diffs
 local previewers = require('telescope.previewers')
 local builtin    = require('telescope.builtin')

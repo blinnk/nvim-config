@@ -24,14 +24,16 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
 " Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/vim-jsx-improve'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+Plug 'wakatime/vim-wakatime'
 
 " Utils
-Plug 'luochen1990/rainbow'
+Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'ludovicchabant/vim-gutentags'
@@ -56,11 +58,12 @@ Plug 'alvan/vim-closetag'
 " Snippets
 Plug 'junegunn/vim-emoji'
 Plug 'hrsh7th/nvim-compe'
+"-- todo
 " Install nvim-cmp
-Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/cmp-buffer'
 " Install the buffer completion source
 Plug 'L3MON4D3/LuaSnip'
-Plug 'hrsh7th/cmp-buffer'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'hrsh7th/vim-vsnip'
@@ -79,8 +82,6 @@ Plug 'mlaursen/vim-react-snippets'
 Plug 'nvim-treesitter/nvim-treesitter', {'branch' : '0.5-compat', 'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'branch' : '0.5-compat'}
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-" Plug 'vim-pandoc/vim-pandoc'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " Formatting
 Plug 'mhartington/formatter.nvim'
@@ -101,17 +102,14 @@ Plug 'KabbAmine/vCoolor.vim'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
-Plug 'akinsho/nvim-bufferline.lua'
 Plug 'mhinz/vim-startify'
 Plug 'karb94/neoscroll.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ray-x/lsp_signature.nvim'
-" Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'master' }
-" Plug 'doums/ponton.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'master' }
 
 " Organization + Notes
 Plug 'itchyny/calendar.vim'
-Plug 'oberblastmeister/neuron.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kevinhwang91/rnvimr'
@@ -119,12 +117,8 @@ Plug 'vim-scripts/BufOnly.vim'
 
 " Themes
 Plug 'TheNiteCoder/mountaineer.vim'
-Plug 'ajgrf/sprinkles'
 Plug 'AlessandroYorba/Sierra'
 Plug 'dylanaraps/wal'
-Plug 'a/vim-trash-polka'
-Plug 'arcticicestudio/nord-vim'
-Plug 'jeetsukumaran/vim-nefertiti'
 Plug 'danishprakash/vim-yami'
 Plug 'AlessandroYorba/Alduin'
 Plug 'AlessandroYorba/Despacio'
@@ -133,7 +127,31 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'morhetz/gruvbox'
 Plug 'yorickpeterse/happy_hacking.vim'
 Plug 'chriskempson/base16-vim'
-Plug 'arzg/vim-colors-xcode'
+
+Plug 'elvessousa/sobrio'
+Plug 'mildewchan/takodachi.vim'
+Plug 'banga/vim-muted'
+Plug 'isobit/vim-darcula-colors'
+Plug 'thenewvu/vim-colors-arthur'
+Plug 'tstelzer/kauz.vim'
+Plug 'arzg/vim-mayanfog'
+Plug 'igungor/schellar'
+Plug 'ackyshake/Spacegray.vim'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'mcchrish/zenbones.nvim'
+Plug 'rayes0/blossom.vim'
+
+Plug 'sff1019/hogwarts.vim'
+Plug 'mihaifm/4colors'
+Plug 'micke/vim-hybrid'
+Plug 'kbrsh/nox'
+Plug 'jordwalke/VimCleanColors'
+Plug 'initrc/spring'
+Plug 'vim-scripts/darknight256.vim'
+Plug 'dylanaraps/crayon'
+Plug 'chrisdiana/itg_flat_vim'
+Plug 'queyenth/oxeded.vim'
+Plug 'ecssiah/nyx'
 
 call plug#end()
 

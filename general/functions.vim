@@ -1,4 +1,3 @@
-
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
@@ -17,6 +16,3 @@ augroup highlight_yank
   autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
 augroup END
 
-function! CustomFold()
-	return printf('   %-6d%s', v:foldend - v:foldstart + 1, getline(v:foldstart))
-endfunction

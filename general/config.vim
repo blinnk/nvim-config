@@ -13,9 +13,9 @@ let g:signify_sign_delete = '-'
 
 let g:vim_jsx_pretty_colorful_config = 1
 
-let g:better_whitespace_enabled = 0
+let g:better_whitespace_enabled = 1
 
-let g:js_file_import_use_fzf = 0
+let g:js_file_import_use_fzf = 1
 let g:js_file_import_use_telescope = 1
 
 " let g:indentLine_char_list = ['|', '¦']

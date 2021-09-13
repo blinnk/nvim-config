@@ -1,5 +1,5 @@
 
-vim.g.vim_markdown_folding_disabled = 1
+-- vim.g.vim_markdown_folding_disabled = 1
 
 -- " .o not use conceal feature, the implementation is not so good
 vim.g.vim_markdown_conceal = 0
