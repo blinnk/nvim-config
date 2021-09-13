@@ -35,7 +35,6 @@ hi VertSplit guibg=bg guifg=bg
 " set viminfo='100,n$HOME/.vim/files/info/viminfo
 " autocmd User Startified setlocal buflisted
 
-source $HOME/.config/nvim/vim-plug/tree.vim
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -47,3 +46,5 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
+
+source $HOME/.config/nvim/vim-plug/tree.vim
