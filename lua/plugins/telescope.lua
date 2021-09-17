@@ -1,6 +1,19 @@
 local actions = require('telescope.actions')
+local action_state = require "telescope.actions.state"
+
+local set_prompt_to_entry_value = function(prompt_bufnr)
+  local entry = action_state.get_selected_entry()
+  if not entry or not type(entry) == "table" then
+    return
+  end
+
+  action_state.get_current_picker(prompt_bufnr):reset_prompt(entry.ordinal)
+end
+
 require('telescope').setup {
     defaults = {
+        -- winblend         = 0,
+        prompt_prefix    = ' > ',
         vimgrep_arguments = {
           'rg',
           '--color=never',
@@ -10,26 +23,39 @@ require('telescope').setup {
           '--column',
           '--smart-case'
         },
+        file_ignore_patterns = {'undodir, node_modules, Session.vim, .vscode, tags'},
 
-        -- winblend         = 50,
-        file_ignore_patterns = {'undodir, node_modules, Session.vim, .vscode'},
-
-        layout_strategy = "vertical",
+        layout_strategy = "horizontal",
         layout_config = {
+            width = 0.95,
+            height = 0.85,
+          prompt_position = "top",
           horizontal = {
             mirror = false,
+            preview_width = function(_, cols, _)
+          if cols > 200 then
+            return math.floor(cols * 0.4)
+          else
+            return math.floor(cols * 0.6)
+          end
+        end,
           },
           vertical = {
-            mirror = true,
+              width = 0.9,
+              height = 0.95,
+            -- mirror = true,
           },
-          prompt_position = "top",
+          flex = {
+              preview_width = 0.9,
+            }
         },
 
-        file_sorter      = require('telescope.sorters').get_fzy_sorter,
-        prompt_prefix    = ' 🔍 ',
         color_devicons   = false,
-        sorting_strategy = "ascending",
+        sorting_strategy = "descending",
+        scroll_strategy = "cycle",
+        selection_strategy ="reset",
 
+        file_sorter      = require('telescope.sorters').get_fzy_sorter,
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
         qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
@@ -46,24 +72,27 @@ require('telescope').setup {
                 ["<C-s>"] = actions.cycle_previewers_next,
                 ["<C-a>"] = actions.cycle_previewers_prev,
             }
-        }
+        },
+        borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     },
-       extensions = {
+
+      extensions = {
+      fzy_native = {
+          override_generic_sorter = true,
+          override_file_sorter = true,
+        },
         project ={
            display_type = 'full',
            base_dirs = {
-        {'~/documents/code/projects', max_depth = 4},
-                '~/documents/code/notes',
-                '~/documents/code/clones',
-                '~/documents/code/templates',
+        {'~/documents/code', max_depth = 4},
       },
           hidden_files = true
     },
-        fzf = {
-            override_generic_sorter = false,
-            override_file_sorter = true,
-            case_mode = "smart_case",
-        }
+        -- fzf = {
+        --     override_generic_sorter = false,
+        --     override_file_sorter = true,
+        --     case_mode = "smart_case",
+        -- }
     }
 }
 vim.api.nvim_set_keymap(
@@ -74,7 +103,7 @@ vim.api.nvim_set_keymap(
 )
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('ultisnips')
-require'telescope'.load_extension('project')
+require('telescope').load_extension('project')
 
 
 -- Implement delta as previewer for diffs

@@ -1,4 +1,4 @@
-vim.g.startify_session_autoload = 1
+-- vim.g.startify_session_autoload = 1
 vim.g.startify_session_persistence = 0
 vim.g.startify_padding_left = 20
 vim.g.startify_update_oldfiles = 1

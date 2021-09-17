@@ -2,9 +2,9 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/colorscheme.vim
 source $HOME/.config/nvim/general/config.vim
 source $HOME/.config/nvim/general/functions.vim
-source $HOME/.config/nvim/general/lsp.vim
 source $HOME/.config/nvim/vim-plug/prettier.vim
 source $HOME/.config/nvim/vim-plug/markdown-preview-nvim.vim
+source $HOME/.config/nvim/vim-plug/tree.vim
 
 luafile $HOME/.config/nvim/lua/init.lua
 
@@ -47,4 +47,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-source $HOME/.config/nvim/vim-plug/tree.vim
+
+"  autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
+"  autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 100)
+"  autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
+"  autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 100)

@@ -6,7 +6,7 @@ lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(
     underline = true,
     virtual_text = {
       prefix = "●",
-      spacing = 4,
+      spacing = 40,
     }
   }
 )

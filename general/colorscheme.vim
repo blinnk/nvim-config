@@ -15,6 +15,7 @@ let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme base16-black-metal-venom
 " set background=light
 " colors sobrio
+" colors bronzage
 
 
 " let g:spacegray_low_contrast = 1
@@ -24,18 +25,19 @@ let base16colorspace=256  " Access colors present in 256 colorspace
 
 
 " colors mountaineer-grey
-" colors mayanfog
+colors mayanfog
 " colors schellar
 
 " let g:enable_italic_font = 1
 " let g:hybrid_transparent_background = 1
 " let g:enable_bold_font = 1
 
-colors crayon
+" colors crayon
+" colors distinguished
 
 " colors hybrid
 
-highlight NORMAL guibg=NONE ctermbg=NONE
+" highlight NORMAL guibg=NONE ctermbg=NONE
 highlight ColorColumn guibg=#1F1F1F ctermbg=0
 highlight DiffChange guibg=NONE ctermbg=NONE
 highlight GitGutterChange guifg=#5f8787 guibg=NONE ctermfg=66 ctermbg=NONE
@@ -80,19 +82,4 @@ hi LspDiagnosticsUnderlineWarning guifg=NONE ctermfg=NONE cterm=underline gui=un
 hi LspDiagnosticsUnderlineInformation guifg=NONE ctermfg=NONE cterm=underline gui=underline
 hi LspDiagnosticsUnderlineHint guifg=NONE ctermfg=NONE cterm=underline gui=underline
 
-lua << EOF
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
- vim.lsp.diagnostic.on_publish_diagnostics, {
-   -- Enable underline, use default values
-   underline = true,
-   -- Enable virtual text only on Warning or above, override spacing to 2
-   virtual_text = {
-     spacing = 2,
-     severity_limit = "Warning",
-   },
- }
-)
-EOF
-
-autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 

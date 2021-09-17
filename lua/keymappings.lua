@@ -1,10 +1,27 @@
+-- saga
+vim.api.nvim_set_keymap('n',  'gd', "<cmd>lua vim.lsp.buf.definition()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',  'gD', "<cmd>lua require('lspsaga.provider').pr{noremap = true, silent = true}eview_definition()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',  'gr', "<cmd>lua require('lspsaga.provider').lsp_finder()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n','<S-Space>', "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<Leader>ca",  "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<Leader>ca", "<cmd>'<,'>lua require('lspsaga.codeaction').range_code_action()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',"<Leader>cr",  "<cmd>lua require('lspsaga.rename').rename()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',"<Leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',"<Leader>cf", "<cmd>'<.'>lua vim.lsp.buf.range_formatting()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',"K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',"<C-k>", "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',"[g", "<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',"]g", "<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',"<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',"<C-b>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n',"<leader>cl", "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", {noremap = true, silent = true})
 
 -- goyo on/ff
 vim.api.nvim_set_keymap('n', "<F10>", "<CMD>:Goyo<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', "<F11>", "<CMD>:Goyo<CR>", {noremap = true, silent = true})
 
 -- plug
-vim.api.nvim_set_keymap('n', "<F2>", "<CMD>:PlugInstall<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', "<F1>", "<CMD>:PlugInstall<CR>", {noremap = true, silent = true})
 
 -- no yank on paste
 vim.api.nvim_set_keymap('v', "p", '"_dP', {noremap = true, silent = true})
@@ -109,8 +126,10 @@ vim.api.nvim_set_keymap("n", ",t", "<CMD>tabnew<CR>", {  silent = true })
 
 -- Avoid issues because of remapping <c-a> and <c-x> below
 vim.cmd [[
-  nnoremap <Plug>SpeedDatingFallbackUp <c-a>
-  nnoremap <Plug>SpeedDatingFallbackDown <c-x>
+  nnoremap <Plug>dial-increment <c-a>
+  nnoremap <Plug>dial-decrement <c-x>
+  vnoremap <Plug>dial-increment <c-a>
+  vnoremap <Plug>dial-decrement <c-x>
 ]]
 
 -- Quickfix
@@ -122,6 +141,12 @@ vim.api.nvim_set_keymap("n", "<Space>cc", ":cclose<CR>", { silent = true })
 vim.cmd [[
   imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
   smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+]]
+
+-- compe
+vim.cmd [[
+  imap <silent><expr> <C-Space> compe#complete()
+  imap <silent><expr> <CR>      compe#confirm('<CR>')
 ]]
 
 -- -F12- Space to NOP to prevent Leader issues

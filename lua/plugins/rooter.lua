@@ -1,5 +1,5 @@
 require('rooter').setup({
-  echo = false,
+  echo = true,
   patterns = {
     '.git',
     'package.json'

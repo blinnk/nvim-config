@@ -16,11 +16,11 @@ require('plugins/term')
 require('plugins/rooter')
 require('plugins/neoscroll')
 require('plugins/luasnip')
--- require('plugins/trouble')
+require('plugins/trouble')
 -- require('plugins/bufferline')
 -- require('plugins/emmet-compe')
 
-require('statusline/init_1')
+require('statusline/init')
 
 require('lsp/config')
 require('lsp/efm')

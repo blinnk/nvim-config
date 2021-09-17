@@ -6,6 +6,12 @@
 
 call plug#begin('~/.vim/plugged')
 
+
+Plug 'rizzatti/dash.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'monaqa/dial.nvim'
+Plug 'folke/trouble.nvim'
+
 " Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -24,16 +30,14 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'onsails/lspkind-nvim'
 " Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
-Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
-
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/vim-jsx-improve'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
-Plug 'wakatime/vim-wakatime'
+Plug 'nacro90/numb.nvim'
 
 " Utils
-Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'wakatime/vim-wakatime'
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'ludovicchabant/vim-gutentags'
@@ -47,7 +51,6 @@ Plug 'matze/vim-move'
 Plug 'tpope/vim-commentary'
 Plug 'abecodes/tabout.nvim'
 "--- tmux
-" Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 "--- git
 Plug 'kdheepak/lazygit.nvim'
@@ -81,21 +84,21 @@ Plug 'mlaursen/vim-react-snippets'
 "  Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'branch' : '0.5-compat', 'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'branch' : '0.5-compat'}
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 " Formatting
 Plug 'mhartington/formatter.nvim'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install',
+"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 " General UX/UI
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+" Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/limelight.vim'
+" autocmd! User GoyoEnter Limelight
+" autocmd! User GoyoLeave Limelight!
 " tabular plugin is used to format tables
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
 Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 Plug 'KabbAmine/vCoolor.vim'
@@ -109,7 +112,7 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'master' }
 
 " Organization + Notes
-Plug 'itchyny/calendar.vim'
+" Plug 'itchyny/calendar.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kevinhwang91/rnvimr'
@@ -152,6 +155,9 @@ Plug 'dylanaraps/crayon'
 Plug 'chrisdiana/itg_flat_vim'
 Plug 'queyenth/oxeded.vim'
 Plug 'ecssiah/nyx'
+Plug 'Lokaltog/vim-distinguished'
+Plug 'habamax/vim-bronzage'
+Plug 'vim-scripts/twilight256.vim'
 
 call plug#end()
 
