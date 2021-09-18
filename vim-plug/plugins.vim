@@ -1,11 +1,9 @@
-
  function! Cond(cond, ...)
    let opts = get(a:000, 0, {})
    return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
  endfunction
 
 call plug#begin('~/.vim/plugged')
-
 
 Plug 'rizzatti/dash.vim'
 Plug 'tpope/vim-unimpaired'
@@ -40,6 +38,7 @@ Plug 'nacro90/numb.nvim'
 Plug 'wakatime/vim-wakatime'
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'windwp/nvim-ts-autotag'
+Plug 'alvan/vim-closetag'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -56,7 +55,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'alvan/vim-closetag'
 
 " Snippets
 Plug 'junegunn/vim-emoji'
@@ -84,7 +82,7 @@ Plug 'mlaursen/vim-react-snippets'
 "  Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'branch' : '0.5-compat', 'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'branch' : '0.5-compat'}
-" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 " Formatting
 Plug 'mhartington/formatter.nvim'
@@ -97,8 +95,6 @@ Plug 'mhartington/formatter.nvim'
 " Plug 'junegunn/limelight.vim'
 " autocmd! User GoyoEnter Limelight
 " autocmd! User GoyoLeave Limelight!
-" tabular plugin is used to format tables
-" Plug 'godlygeek/tabular'
 Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 Plug 'KabbAmine/vCoolor.vim'
@@ -158,6 +154,9 @@ Plug 'ecssiah/nyx'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'habamax/vim-bronzage'
 Plug 'vim-scripts/twilight256.vim'
+Plug 'ajmwagar/vim-deus'
+Plug 'i3d/vim-jimbothemes'
+Plug 'habamax/vim-saturnite'
 
 call plug#end()
 

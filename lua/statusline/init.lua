@@ -2,22 +2,13 @@ local cmd = vim.cmd
 local fn = vim.fn
 local gl = require("galaxyline")
 local gls = gl.section
-gl.short_line_list = {"NvimTree", "vim-plug",'plug', 'term', 'startify'}
--- #4A3335
--- #4D4E50
--- #334648
-  -- line_bg = "#6E8888",
-  -- magenta = "#af5e5e",
---
--- bg = "#72655E", --gruv
--- bg = "#9C9FA1",
--- bg = "#4D4E50",
+gl.short_line_list = {"NvimTree", "vim-plug",'plug', 'term', 'startify', 'split'}
+
 local colors = {
-  bg = "#4B5056",
-  fg = "#0E1014",
-  -- fg = "#FFFFFF",
+  bg = "#191919",
+  fg = "#FFFFFF",
   -- lbg = "#6E8888",
-  lbg = "#FFFFFF",
+  lbg = "#191919",
   line_bg = "#252525",
   magenta = "#C28788",
   fg_green = "#334648",
@@ -33,6 +24,10 @@ local colors = {
   black="#252525"
 }
 
+
+local function insert_mid(element)
+    table.insert(gls.mid, element)
+end
 
 local function lsp_status(status)
     shorter_stat = ''
@@ -63,7 +58,7 @@ local function insert_blank_line_at_left()
 insert_left {
   Space = {
     provider = function () return ' ' end,
-    highlight = {colors.fg,colors.fg}
+    highlight = {colors.bg,colors.bg}
   }
 }
 end
@@ -113,7 +108,7 @@ insert_left {
     provider = function()
       -- auto change color according the vim mode
       local mode_color = {
-        n = colors.lbg,
+        n = colors.fg,
         i = colors.magenta,
         v = colors.magenta,
         [""] = colors.magenta,
@@ -136,7 +131,7 @@ insert_left {
       }
       cmd("hi GalaxyViMode guifg=" .. mode_color[fn.mode()])
       -- return "    "
-      return ""
+      return "   "
     end,
     highlight = {colors.lbg, "bold" }
   }
@@ -151,27 +146,6 @@ insert_left{
     highlight = {colors.fg, colors.bg},
   }
 }
--- insert_left {
---   Start = {
---     provider = function() return '' end,
---     highlight = {colors.line_bg}
---   }
--- }
-
-
--- insert_left {
---   Start = {
---     provider = function() return '' end,
---     highlight = {colors.line_bg}
---   }
--- }
-
---   FileIcon = {
---     provider = "FileIcon",
---     condition = buffer_not_empty,
---     highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bg, "bold"}
---   }
--- }
 
 insert_left{
   FileName = {
@@ -180,11 +154,23 @@ insert_left{
       return fn.expand("%:f")
     end,
     condition = buffer_not_empty,
-    -- separator = "  ",
-    -- separator_highlight = {colors.red, colors.bg},
-    highlight = {colors.lbg, colors.bg}
+    separator = "   ",
+    separator_highlight = {colors.red, colors.bg},
+    highlight = {colors.fg, colors.bg}
   }
 }
+
+
+insert_left {
+  GitBranch = {
+    provider = "GitBranch",
+    separator = "",
+    condition = require("galaxyline.provider_vcs").check_git_workspace,
+    separator_highlight = {colors.purple, colors.bg},
+    highlight = {colors.fg, colors.bg}
+  }
+}
+
 
 insert_left {
   GitIcon = {
@@ -197,18 +183,21 @@ insert_left {
   }
 }
 
-
-insert_left {
-  GitBranch = {
-    provider = "GitBranch",
-    separator = " ",
-    condition = require("galaxyline.provider_vcs").check_git_workspace,
-    separator_highlight = {colors.purple, colors.bg},
-    highlight = {colors.fg, colors.bg}
-  }
+------------------ MID -----------------------
+insert_mid{
+    ShowLspClient = {
+        provider = 'GetLspClient',
+        condition = function()
+            local tbl = {['startify'] = true, [''] = true}
+            if tbl[vim.bo.filetype] then
+                return false
+            end
+            return true
+            end,
+            icon = ' ',
+            highlight = {colors.fg, colors.bg}
+    }
 }
-
-
 
 ----------------- RIGHT ----------------------
 
@@ -217,7 +206,7 @@ insert_right {
   DiffAdd = {
     provider = "DiffAdd",
     condition = checkwidth,
-    icon = "   ",
+    icon = "   ",
     highlight = {colors.fg, colors.bg}
   }
 }
@@ -226,8 +215,8 @@ insert_right {
   DiffModified = {
     provider = "DiffModified",
     condition = checkwidth,
-    icon = " ",
-    highlight = {colors.lbg, colors.bg}
+    icon = "  ",
+    highlight = {colors.fg, colors.bg}
   }
 }
 
@@ -235,47 +224,12 @@ insert_right {
   DiffRemove = {
     provider = "DiffRemove",
     condition = checkwidth,
-    icon = " ",
-    highlight = {colors.red, colors.bg}
+    icon = "  ",
+    highlight = {colors.fg, colors.bg}
   }
 }
 
--- insert_blank_line_at_right()
-
--- insert_right {
---   ViMode = {
---     provider = function()
---       -- auto change color according the vim mode
---       local mode_color = {
---         n = colors.bg,
---         i = colors.green,
---         v = colors.blue,
---         [""] = colors.lbg,
---         V = colors.blue,
---         c = colors.red,
---         no = colors.red,
---         s = colors.orange,
---         S = colors.orange,
---         [""] = colors.orange,
---         ic = colors.yellow,
---         R = colors.purple,
---         Rv = colors.purple,
---         cv = colors.red,
---         ce = colors.red,
---         r = colors.cyan,
---         rm = colors.cyan,
---         ["r?"] = colors.cyan,
---         ["!"] = colors.red,
---         t = colors.red
---       }
---       cmd("hi GalaxyViMode guifg=" .. mode_color[fn.mode()])
---       -- return "    "
---       return ""
---     end,
---     highlight = {colors.bg, colors.fg, "bold" }
---   }
--- }
-
-
-
--- insert_blank_line_at_right()
+insert_blank_line_at_right()
+insert_blank_line_at_right()
+insert_blank_line_at_right()
+insert_blank_line_at_right()

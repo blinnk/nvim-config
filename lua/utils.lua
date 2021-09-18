@@ -76,3 +76,4 @@ function M.has_width_gt(cols)
 end
 
 return M
+
